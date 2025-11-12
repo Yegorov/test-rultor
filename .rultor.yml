@@ -1,12 +1,12 @@
 decrypt:
-  ghpat.txt: "repo/scrt/ghpat.txt.asc"
+  ghpat.txt: "repo/ghpat.txt.asc"
 release:
   script: |
     git checkout --orphan gh-pages
     git rm -r *
     git checkout master md/.md
     sha384sum *.md > checksums.txt
-    git commit -m "version set to ${tag}"
+    git commit -am "version set to ${tag}"
     repo=Yegorov/test-rultor
     read -r -s ghpat < ../ghpat.txt
     git remote set-url origin https://${ghpat}@github.com/${repo}
