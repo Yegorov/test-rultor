@@ -16,4 +16,4 @@ release:
     sha384sum *.md > checksums.txt
     git add .
     git commit -m "version set to ${tag}"
-    git push origin gh-pages
+    # git push origin gh-pages
