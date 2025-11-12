@@ -1,10 +1,9 @@
 release:
   script: |-
-    if git show-branch origin/gh-pages; then
-      git checkout gh-pages
-    else
-      git checkout --orphan gh-pages
-    fi
+    flags=''
+    git show-branch origin/gh-pages
+    [[ $? -ne 0 ]] && flags+='--orphan'
+    git checkout ${flags} gh-pages
     rm -rf *
     git rm -rf *
     git checkout master -- md/*.md
