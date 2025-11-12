@@ -10,7 +10,8 @@ release:
     cp md/*.md .
     rm -rf md
     sha384sum *.md > checksums.txt
-    git commit -am "version set to ${tag}"
+    git add .
+    git commit -m "version set to ${tag}"
     repo=Yegorov/test-rultor
     read -r -s ghpat < ../ghpat.txt
     git remote set-url origin https://${ghpat}@github.com/${repo}.git
