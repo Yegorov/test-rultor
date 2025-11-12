@@ -13,5 +13,5 @@ release:
     git commit -am "version set to ${tag}"
     repo=Yegorov/test-rultor
     read -r -s ghpat < ../ghpat.txt
-    git remote set-url origin https://${ghpat}@github.com/${repo}
+    git remote set-url origin https://${ghpat}@github.com/${repo}.git
     git push origin gh-pages
