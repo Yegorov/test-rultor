@@ -5,12 +5,10 @@ release:
     repo=Yegorov/test-rultor
     # read -r -s ghpat < ../ghpat.txt
     # git remote set-url origin https://${ghpat}@github.com/${repo}.git
+    option=''
     git show-branch origin/gh-pages
-    if [[ $? -ne 0 ]];; then
-      git checkout --orphan gh-pages
-    else
-      git checkout gh-pages
-    fi
+    [[ $? -ne 0 ]] && option+='--orphan'
+    git checkout ${option} gh-pages
     # git pull origin gh-pages
     rm -rf *
     git rm -rf *
