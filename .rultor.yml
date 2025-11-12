@@ -6,10 +6,10 @@ release:
     # read -r -s ghpat < ../ghpat.txt
     # git remote set-url origin https://${ghpat}@github.com/${repo}.git
     git show-branch origin/gh-pages
-    if git show-branch origin/gh-pages; then
-      git checkout gh-pages
-    else
+    if [[ $? -ne 0 ]];; then
       git checkout --orphan gh-pages
+    else
+      git checkout gh-pages
     fi
     # git pull origin gh-pages
     rm -rf *
