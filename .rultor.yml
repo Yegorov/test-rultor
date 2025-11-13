@@ -12,4 +12,4 @@ release:
     rm -rf md
     sha384sum *.md > checksums.txt
     git add .
-    git commit -m "version set to ${tag}"
+    git commit --allow-empty -m "version set to ${tag}"
