@@ -1,7 +1,7 @@
 release:
   script: |-
     flags=''
-    [[ -n "$(git branch -r | grep 'origin/gh-pages')" ]] && flags+='--orphan'
+    [[ -n "$(git branch -r | grep 'origin/gh-pages')" ]] && flags+='--orphan -b'
     git checkout ${flags} gh-pages
     rm -rf *
     git rm -rf *
