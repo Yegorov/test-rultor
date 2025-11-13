@@ -3,4 +3,4 @@
 Some example
 
 * [Some](./some123)
-* [Other](/other124)
+* [Other](other124)
